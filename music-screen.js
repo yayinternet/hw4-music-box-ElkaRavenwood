@@ -8,8 +8,13 @@
 //
 // See HW4 writeup for more hints and details.
 class MusicScreen {
+
   constructor() {
     // TODO(you): Implement the constructor and add fields as necessary.
+    let aud = new AudioPlayer();
+    let gif = new GifDisplay();
+    let play = new PlayButton();
   }
+  
   // TODO(you): Add methods as necessary.
 }

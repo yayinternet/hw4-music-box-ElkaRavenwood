@@ -2,3 +2,10 @@
 // classes or to call methods on `App`. You may not add any global state
 // variables.
 const app = new App();
+
+
+// Makes menu screen
+let menu = new MenuScreen();
+
+// Makes music screen
+let music = new MusicScreen();
