@@ -1,3 +1,26 @@
 /*
 TODO(you): Write any additional styles you need here.
 */
+
+#music #controlBar {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	background-color: white;
+	height: 70px;
+	width: 100%;
+	bottom: 0px;
+}
+
+#music #controlBar #displayArea {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#music #controlBar #button {
+	background-image: url(images/play.png);
+	background-size: cover;
+	height: 60px;
+	width: 60px;
+}

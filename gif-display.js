@@ -3,8 +3,12 @@
 // 
 // See HW4 writeup for more hints and details.
 class GifDisplay {
-  constructor() {
+  constructor(url) {
+
     // TODO(you): Implement the constructor and add fields as necessary.
+	fetch(url);
+	console.log(url);
   }
   // TODO(you): Add methods as necessary.
+
 }
