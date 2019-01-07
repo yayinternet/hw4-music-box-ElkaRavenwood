@@ -5,7 +5,7 @@
 class PlayButton {
   constructor() {
     // TODO(you): Implement the constructor and add fields as necessary.
-    this.playing = false;
+    this.playing = true;
     this.container = document.querySelector("#button");
     this.toggle = this.toggle.bind(this);
 
@@ -20,6 +20,7 @@ class PlayButton {
     else {
       this.play();
     }
+    app.music.gif.changeGif();
     this.playing = !this.playing;
   }
 

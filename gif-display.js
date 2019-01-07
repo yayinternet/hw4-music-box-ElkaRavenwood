@@ -26,28 +26,29 @@ class GifDisplay {
   	for (const result of json.data) {
        this.urls.push(result.images.downsized.url);
     }
+
+  	this.index = Math.floor(Math.random() * this.urls.length);
     this.changeGif();
-    }
-//   }
+   }
 
   changeGif () {
+  	let randInt= Math.floor(Math.random() * this.urls.length);
+  	while (this.index === randInt) {
+  		randInt = Math.floor(Math.random() * this.urls.length);
+  	}
 
   	let displayContainer = document.getElementById('displayArea');
+  	
     let pic = document.createElement('img');
     pic.style.width = '100%';
     pic.style.height = '100%';
 
-    if (this.index < this.urls.length) {
-  		pic.src = this.urls[this.index];	
-    	this.index++;
-  	} else {
-  		pic.src = this.urls[0];
-  		this.index = 0;
-  	}
+  	pic.src = this.urls[randInt];
 
     pic.classList.add('image');
-    displayContainer.appendChild(pic);
 
+    displayContainer.innerHTML ="";
+  	displayContainer.appendChild(pic);
   	
   }
 

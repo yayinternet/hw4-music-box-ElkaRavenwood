@@ -14,10 +14,11 @@ class MusicScreen {
   	this.theme;
   	this.song;
   	this.gif;
+  	this.url;
 
     // TODO(you): Implement the constructor and add fields as necessary.
     this.aud = new AudioPlayer();
-    
+
     let play = new PlayButton();
 
   }
@@ -34,10 +35,8 @@ class MusicScreen {
 				this.url = songs[key]['songUrl'];
  			}
  		}
-  }
-
-  setSong (url) {
-  	this.aud.setSong(url);
+ 		console.log(this.url);
+    this.aud.setSong(this.url);
   }
 
 }

@@ -40,6 +40,7 @@ class AudioPlayer {
   }
 
   _onKickCallback() {
+    console.log(this.kick);
     if (!this.kickCallback) {
       return;
     }
