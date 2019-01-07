@@ -5,6 +5,7 @@ TODO(you): Write any additional styles you need here.
 #music #controlBar {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	position: absolute;
 	background-color: white;
 	height: 70px;
@@ -12,15 +13,28 @@ TODO(you): Write any additional styles you need here.
 	bottom: 0px;
 }
 
-#music #controlBar #displayArea {
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-}
 
 #music #controlBar #button {
 	background-image: url(images/play.png);
 	background-size: cover;
-	height: 60px;
+	height: 60px !important;
 	width: 60px;
+	margin: unset;
+}
+
+
+#music #displayArea {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	margin: unset;
+}
+
+#displayArea image{	
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	
 }

@@ -4,13 +4,17 @@
 // See HW4 writeup for more hints and details.
 class App {
 
-  constructor() {
+  constructor(menu, music) {
     // TODO(you): Implement the constructor and add fields as necessary.
 	// Makes menu screen
-	this.menu = new MenuScreen(document.getElementById("menu"));
+	
+	this.menu = menu;
+	this.music = music;
 
-	// Makes music screen
-	this.music = new MusicScreen(document.getElementById("music"));
+	// this.menu = new MenuScreen(document.getElementById("menu"));
+
+	// // Makes music screen
+	// this.music = new MusicScreen(document.getElementById("music"));
 
 	document.addEventListener('buttonClicked', this.buttonClickedListener);
 	

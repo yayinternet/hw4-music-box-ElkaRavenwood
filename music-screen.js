@@ -14,12 +14,12 @@ class MusicScreen {
   	this.theme;
   	this.song;
   	this.gif;
-  	
 
     // TODO(you): Implement the constructor and add fields as necessary.
-    let aud = new AudioPlayer();
+    this.aud = new AudioPlayer();
     
     let play = new PlayButton();
+
   }
 
   // TODO(you): Add methods as necessary.
@@ -29,6 +29,15 @@ class MusicScreen {
 
   show () {
   	this.containerElement.classList.remove('inactive');
+  	for (const key in songs) {
+  		if (songs[key]['title'] === this.song) {
+				this.url = songs[key]['songUrl'];
+ 			}
+ 		}
+  }
+
+  setSong (url) {
+  	this.aud.setSong(url);
   }
 
 }

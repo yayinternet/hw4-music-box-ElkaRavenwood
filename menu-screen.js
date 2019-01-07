@@ -37,7 +37,6 @@ const songs  = {
 	  }
 	}
 
-
 class MenuScreen {
   constructor(containerElement) {
   	this.containerElement = containerElement;
@@ -63,21 +62,21 @@ class MenuScreen {
   makeSongList() {
   	const selectContainer = document.getElementById("song-selector");
   	// let songList = fetch('https://yayinternet.github.io/hw4-music/songs.json');
-	let songTitle = {};
+		let songTitle = {};
 
-	for (const key in songs) {
-		
-		for (const innerKey in songs[key]) {
+		for (const key in songs) {
+			
+			for (const innerKey in songs[key]) {
 
-			if (innerKey === 'title') {
-			  	let option = document.createElement('option');
-				let text = document.createTextNode(songs[key][innerKey]);
-				option.appendChild(text);
-				selectContainer.appendChild(option);
-				songTitle[key] = songs[key][innerKey];
+				if (innerKey === 'title') {
+				  let option = document.createElement('option');
+					let text = document.createTextNode(songs[key][innerKey]);
+					option.appendChild(text);
+					selectContainer.appendChild(option);
+					songTitle[key] = songs[key][innerKey];
+				}
 			}
 		}
-	}
   }
 
   makeThemes () {
@@ -89,28 +88,28 @@ class MenuScreen {
 
   onClick () {
   	event.preventDefault(); // Prevents default
-	let container = document.getElementById("query-input");
+		let container = document.getElementById("query-input");
 
-	let theme = container.value;
-	if (theme === ""){
-		theme = container.placeholder;
-	}
+		let theme = container.value;
+		if (theme === ""){
+			theme = container.placeholder;
+		}
 
-	let selected = document.querySelector("option:checked").childNodes[0].textContent;
-	console.log("Theme: " + theme);
-	console.log("Choice: " + selected);
+		let selected = document.querySelector("option:checked").childNodes[0].textContent;
+		console.log("Theme: " + theme);
+		console.log("Choice: " + selected);
 
-	const info = {
-		'chosenTheme': theme,
-		'choice': selected,
-	};
-	
-	document.dispatchEvent(
-        new CustomEvent('buttonClicked', { detail: info }));
-	
-	app.menu.hide();
+		const info = {
+			'chosenTheme': theme,
+			'choice': selected,
+		};
+		
+		document.dispatchEvent(
+	        new CustomEvent('buttonClicked', { detail: info }));
+		
+		app.menu.hide();
 
-	app.music.show();
+		app.music.show();
   }
 
   hide() {
