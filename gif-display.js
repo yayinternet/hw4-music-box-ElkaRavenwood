@@ -38,8 +38,8 @@ class GifDisplay {
    	let displayContainer = document.getElementById('displayArea');
    	  	
    	let pic = document.createElement('img');
-	pic.style.width = '100%';
-	pic.style.height = '100%';
+	// pic.style.width = '100%';
+	pic.style.height = '50vw';
    	
    	pic.src = this.urls[this.index];
    	pic.classList.add('image');
@@ -63,8 +63,8 @@ class GifDisplay {
   	}
 
   	let pic = document.createElement('img');
-    pic.style.width = '100%';
-    pic.style.height = '100%';
+    // pic.style.width = '100%';
+    pic.style.height = '50vw';
 
   	pic.src = this.urls[randInt];
 
