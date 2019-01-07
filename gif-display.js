@@ -11,6 +11,7 @@ class GifDisplay {
 	
 	this.urls = [];
 	this.index = 0;
+	this.nextGif = document.createElement('img');
 	// this.gifs = document.querySelectorAll("gif");
 	fetch(url).then(this.onResponse).then(this.onJsonReady);
 	
@@ -28,27 +29,50 @@ class GifDisplay {
     }
 
   	this.index = Math.floor(Math.random() * this.urls.length);
-    this.changeGif();
+    this.newGif(true);
+    this.newGif(false);
    }
 
+
+   newGif (first) {
+   	let displayContainer = document.getElementById('displayArea');
+   	  	
+   	let pic = document.createElement('img');
+	pic.style.width = '100%';
+	pic.style.height = '100%';
+   	
+   	pic.src = this.urls[this.index];
+   	pic.classList.add('image');
+   	
+   	if (first) {
+   		this.nextGif = pic;
+   	} else {
+   		displayContainer.appendChild(pic);
+   	}
+
+   }
+    
+  
   changeGif () {
+	let displayContainer = document.getElementById('displayArea');
+  	
+    
   	let randInt= Math.floor(Math.random() * this.urls.length);
   	while (this.index === randInt) {
   		randInt = Math.floor(Math.random() * this.urls.length);
   	}
 
-  	let displayContainer = document.getElementById('displayArea');
-  	
-    let pic = document.createElement('img');
+  	let pic = document.createElement('img');
     pic.style.width = '100%';
     pic.style.height = '100%';
 
   	pic.src = this.urls[randInt];
 
     pic.classList.add('image');
+    displayContainer.innerHTML = "";
+  	displayContainer.appendChild(this.nextGif);
 
-    displayContainer.innerHTML ="";
-  	displayContainer.appendChild(pic);
+    this.nextGif = pic;
   	
   }
 

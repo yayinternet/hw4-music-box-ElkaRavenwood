@@ -86,7 +86,7 @@ class MenuScreen {
   	container.placeholder = themes[randNum];
   }
 
-  onClick () {
+  onClick (event) {
   	event.preventDefault(); // Prevents default
 		let container = document.getElementById("query-input");
 

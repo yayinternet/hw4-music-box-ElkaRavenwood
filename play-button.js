@@ -20,7 +20,6 @@ class PlayButton {
     else {
       this.play();
     }
-    app.music.gif.changeGif();
     this.playing = !this.playing;
   }
 
